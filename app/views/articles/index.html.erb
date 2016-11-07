@@ -1,4 +1,6 @@
-<%= link_to "New article", new_article_path %><br>
+<% if user_signed_in? %>
+	<%= link_to "New article", new_article_path %><br>
+<%end%>
 
 <% @articles.each do |article| %>
 	<%= link_to "#{article.title}", article_path(article.id) %>

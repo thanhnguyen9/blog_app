@@ -1,5 +1,7 @@
 <%= @article.title %>
 <%= @article.body %>
 
-<%= link_to 'Edit article', edit_article_path(@article) %>
-<%= link_to 'Delete Article', article_path(@article), method: :delete, data: { confirm: 'Are your sure'} %>
+<% if current_user && current_user.id == @article.user_id %>
+	<%= link_to 'Edit article', edit_article_path(@article) %>
+	<%= link_to 'Delete Article', article_path(@article), method: :delete, data: { confirm: 'Are your sure'} %>
+<%end%>
