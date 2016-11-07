@@ -8,6 +8,7 @@
 </head>
 <body class="container">
   <%= link_to 'Sign Up', new_user_registration_path %>
+  <%= link_to 'Sign In', new_user_session_path %>
 
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
@@ -23,6 +24,10 @@
       	<%= flash[:danger] %>      	
       </div>
   <% end %>
+
+  <% if user_signed_in? %>
+    <p>Signed in as <%= current_user.email %></p>
+  <%end%> 
 
   <%= yield %>
 
