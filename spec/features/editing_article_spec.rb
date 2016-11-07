@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Edite article' do
+RSpec.feature 'Edit article' do
 	before do
 		john = User.create(email: 'john@example.com', password: '11111111')
 		login_as(john)
