@@ -9,7 +9,15 @@
 <body class="container">
 
   <% if flash[:success] %>
-      <div id="success"><%= flash[:success] %></div>
+      <div id="success">
+      	<%= flash[:success] %>      	
+      </div>
+  <% end %>
+
+  <% if flash[:danger] %>
+      <div id="danger">
+      	<%= flash[:danger] %>      	
+      </div>
   <% end %>
 
   <%= yield %>

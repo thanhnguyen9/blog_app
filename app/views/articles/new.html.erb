@@ -5,6 +5,11 @@
   <div class='col-md-12'>
 
     <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <% if @article.errors.any? %>
+        <% @article.errors.full_messages.each do |message| %>
+          <%= message %>
+        <%end%>
+      <%end%>
 
         <div class='form-group'>
 
