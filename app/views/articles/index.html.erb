@@ -3,4 +3,8 @@
 <% @articles.each do |article| %>
 	<%= link_to "#{article.title}", article_path(article.id) %>
 	<%= truncate(article.body, length: 500) %>
+
+	<% if article.user %>
+		<p>Created by: <%= article.user.email %></p>
+	<%end%>
 <%end%>
